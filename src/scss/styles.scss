@@ -1,13 +1,6 @@
-// Import variables
-@import "./variables.scss";
+@import "./variables";
 
-// Import Bootstrap
-@import "bootstrap/scss/bootstrap";
+//import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-// Global CSS
-
-
-// Components
-
-
-// Sections
+@import "./bootswatch";
