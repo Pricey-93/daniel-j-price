@@ -9,8 +9,16 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "svelte": "^5.35.1",
     "ts-node": "^10.9.2",
     "typescript": "~5.7.2",
     "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "daisyui": "^5.0.43",
+    "tailwindcss": "^4.1.11"
   }
 }
