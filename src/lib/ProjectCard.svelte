@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Image } from "../ts/types";
+    import LinkedIn from "./Icons/LinkedIn.svelte";
   import TechBadge from "./TechBadge.svelte";
 
   interface Props {
@@ -10,10 +11,10 @@
     technologies: string[]
   }
 
-  const { image, title, isLatest, description, technologies }: Props = $props();
+  const { image, title, description, technologies }: Props = $props();
 </script>
 
-<article class="card bg-base-100 max-w-96 shadow-sm">
+<article class="card max-w-96 shadow-sm">
   <figure>
     <img
       src={image.src}
@@ -22,9 +23,6 @@
   <div class="card-body">
     <h3 class="card-title">
       {title}
-      {#if isLatest}
-      <div class="badge badge-secondary">LATEST</div>
-      {/if}
     </h3>
     <p>{description}</p>
     <div class="card-actions justify-end">
@@ -34,3 +32,5 @@
     </div>
   </div>
 </article>
+
+<LinkedIn />
