@@ -1,75 +1,47 @@
 <script lang="ts">
-  import Footer from "./lib/Footer.svelte";
-  import Header from "./lib/Header.svelte";
   import ProjectCard from "./lib/ProjectCard.svelte";
   import Timeline from "./lib/Timeline.svelte";
   import type { Project } from "./ts/types";
+  import { onMount } from 'svelte';
 
-  const projects: Project[] = [{
-    image: {
-      src: "assets/images/country-finder-screenshot.png",
-      alt: "Shoes",
-    },
-    title: "Country-Finder",
-    isLatest: true,
-    description: "Country finder is an application that interacts with the free Countries API and allows the user to search for, and view, a socio-economic and geo-political overview of any country.",
-    technologies: ["TypeScript", "React", "React-Router"]
-  },
-  {
-    image: {
-      src: "assets/images/rest-api.png",
-      alt: "Shoes",
-    },
-    title: "Film API",
-    isLatest: false,
-    description: "API project built using .NET API controllers. It allows you to do crud actions on films and limits your access based on your JWT claims which much first be retrieved from the identity endpoint. '/token'",
-    technologies: ["C#", ".NET", "Dapper", "Docker"]
-  },
-    {
-    image: {
-      src: "assets/images/portfolio-screenshot.png",
-      alt: "a screenshot of the portfolio page",
-    },
-    title: "Personal Portfolio",
-    isLatest: false,
-    description: "The page you're currently looking at !",
-    technologies: ["TypeScript", "Svelte", "Tailwind CSS", "DaisyUI"]
-  },
-  {
-    image: {
-      src: "assets/images/coming-soon.png",
-      alt: "Shoes",
-    },
-    title: "Blog Site",
-    isLatest: false,
-    description: "This is a full-stack project that I am currently working on and will be a personal blog site once completed. I intend to use this to document things I learn and observe in software development but also in day to day life.",
-    technologies: ["Vue", "PHP", "Laravel"]
-  }];
+  let projects: Project[];
+
+  onMount(async () => {
+    const response = await fetch("data.json");
+    if (response.ok) {
+      projects = await response.json();
+      console.log(projects);
+    } else {
+      console.error('Failed to load data.json');
+    }
+  });
+
+  function scrollToProjects(): void {
+    const projectsSection = document.getElementById('projects');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+  }
 </script>
 
-<!-- <Header /> -->
 <main id="main-container" class="flex flex-col gap-8 container p-4 mx-auto">
-  <section id="intro" class="hero lg:min-h-screen">
-    <div class="hero-content flex-col lg:flex-row-reverse">
+  <section id="intro" class="py-8">
 
-      <div class="avatar">
-        <div class="w-50 md:w-75 lg:w-100 rounded-full">
-          <img 
-            src="assets/images/ghibli-transformed-1751409174082.png"
-            alt="ai generated studio ghibli version of me taking a break in the cotswolds with a picturesque view in the background"
-          />
-        </div>
+    <div class="avatar block mx-auto mb-4">
+      <div class="w-50 md:w-75 lg:w-100 rounded-full mx-auto">
+        <img 
+          src="assets/images/me-in-cotswolds.jpg"
+          alt="Me sat on a wall in the cotswolds with a river behind me and a scenic background."
+        />
       </div>
-
-      <div class="flex flex-col gap-2 text-center">
-        <h1 class="text-primary text-4xl lg:text-6xl">Daniel Price</h1>
-        <p class="text-base-content/50 lg:text-2xl">Software Developer</p>
-        <button type="button" class="btn btn-primary btn-outline">
-          Contact Me
-        </button>
-      </div>
-      
     </div>
+
+    <div class="flex flex-col gap-2 text-center">
+      <h1 class="text-primary text-4xl lg:text-6xl">Daniel Price</h1>
+      <p class="text-base-content/50 lg:text-2xl">Software Developer</p>
+      <button type="button" class="btn btn-primary btn-outline w-50 mx-auto" onclick={scrollToProjects}>
+        see my projects
+      </button>
+    </div>
+
   </section>
 
   <section id="about">
@@ -125,27 +97,18 @@
       <h2 class="text-primary text-3xl text-center lg:text-5xl">Projects</h2>
     </div>
     <div class="py-8 md:p-8 flex flex-row flex-wrap justify-center gap-4">
-      {#each projects as project}
-        <ProjectCard
-        image={project.image}
-        title={project.title} 
-        isLatest={project.isLatest} 
-        description={project.description} 
-        technologies={project.technologies}
-        />
-      {/each}
+      {#if projects}
+        {#each projects as project}
+          <ProjectCard
+          image={project.image}
+          title={project.title} 
+          isLatest={project.isLatest} 
+          description={project.description} 
+          technologies={project.technologies}
+          source={project.source}
+          />
+        {/each}
+      {/if}
     </div>
   </section>
-
-  <section id="contact">
-    <h2 class="text-primary text-3xl text-center lg:text-5xl">Contact</h2>
-    <form> 
-      <fieldset class="fieldset">
-        <legend class="fieldset-legend">Your Message</legend>
-        <textarea class="textarea h-24 w-full" placeholder="Hey my name's X, I'd like to talk to you about Y..."></textarea>
-        <button class="btn btn-primary btn-outline" type="submit">Send</button>
-      </fieldset>
-    </form> 
-  </section>
 </main>
-<Footer />
