@@ -2,4 +2,4 @@
   const { text } = $props();
 </script>
 
-<div class="badge badge-secondary badge-soft badge-outline">{text}</div>
+<div class="badge badge-success badge-soft">{text}</div>
