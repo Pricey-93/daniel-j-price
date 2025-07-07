@@ -6,7 +6,7 @@
 <ol class="timeline max-sm:timeline-compact timeline-vertical" role="list">
   <li>
     <TimelineIcon />
-    <div class="card shadow-sm timeline-start mb-5">
+    <div class="card shadow-sm timeline-start mb-5 bg-base-100">
       <div class="card-body">
         <time class="font-mono italic md:text-end">July - 2025</time>
         <h4 class="card-title font-black">Open to new opportunities!</h4>
@@ -18,7 +18,7 @@
   <li>
     <hr />
     <TimelineIcon />
-    <div class="card shadow-sm timeline-end mb-5">
+    <div class="card shadow-sm timeline-end mb-5 bg-base-100">
       <div class="card-body">
         <time class="font-mono italic">March - 2024</time>
         <h4 class="card-title font-black">Element, Digital Specs</h4>
@@ -60,7 +60,7 @@
   <li>
     <hr />
     <TimelineIcon />
-    <div class="card shadow-sm timeline-start mb-5">
+    <div class="card shadow-sm timeline-start mb-5 bg-base-100">
       <div class="card-body">
         <time class="font-mono italic md:text-end">October - 2023</time>
         <h4 class="card-title font-black">Sustainability Page</h4>
@@ -95,7 +95,7 @@
   <li>
     <hr />
     <TimelineIcon />
-    <div class="card shadow-sm timeline-end mb-5">
+    <div class="card shadow-sm timeline-end mb-5 bg-base-100">
       <div class="card-body">
         <time class="font-mono italic md:text-end">July - 2023</time>
         <h4 class="card-title font-black">Code Chrysalis</h4>
@@ -114,7 +114,7 @@
   </li>
 
   <li>
-    <div class="card shadow-sm timeline-middle">
+    <div class="card shadow-sm timeline-middle bg-base-100">
       <div class="card-body">
         <time class="font-mono italic md:text-end">May - 2022</time>
         <h4 class="card-title font-black">Graduation</h4>
