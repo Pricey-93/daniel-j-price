@@ -1,0 +1,55 @@
+[
+  {
+    "image": {
+      "src": "assets/images/country-finder-screenshot.png",
+      "alt": "Shoes"
+    },
+    "title": "Country-Finder",
+    "isLatest": true,
+    "description": "Country finder is an application that interacts with the free Countries API and allows the user to search for, and view, a socio-economic and geo-political overview of any country.",
+    "technologies": ["TypeScript", "React", "React-Router"],
+    "source": {
+      "productionSiteUrl": "https://pricey-93.github.io/country-finder/",
+      "repositoryUrl": "https://github.com/Pricey-93/country-finder"
+    }
+  },
+  {
+    "image": {
+      "src": "assets/images/film-api-screenshot.png",
+      "alt": "Shoes"
+    },
+    "title": "Film API",
+    "isLatest": false,
+    "description": "API project built using .NET API controllers. It allows you to do crud actions on films and limits your access based on your JWT claims which much first be retrieved from the identity endpoint. '/token'",
+    "technologies": ["C#", ".NET", "Dapper", "Docker"],
+    "source": {
+      "repositoryUrl": "https://github.com/Pricey-93/FilmsAPI"
+    }
+  },
+  {
+    "image": {
+      "src": "assets/images/portfolio-screenshot.png",
+      "alt": "a screenshot of the portfolio page"
+    },
+    "title": "Personal Portfolio",
+    "isLatest": false,
+    "description": "The page you're currently looking at !",
+    "technologies": ["TypeScript", "Svelte", "Tailwind CSS", "DaisyUI"],
+    "source": {
+      "repositoryUrl": "https://github.com/Pricey-93/dev-portfolio"
+    }
+  },
+  {
+    "image": {
+      "src": "assets/images/coming-soon.png",
+      "alt": "Shoes"
+    },
+    "title": "Blog Site",
+    "isLatest": false,
+    "description": "This is a full-stack project that I am currently working on and will be a personal blog site once completed. I intend to use this to document things I learn and observe in software development but also in day to day life.",
+    "technologies": ["Vue", "PHP", "Laravel"],
+    "source": {
+      "repositoryUrl": "https://github.com/Pricey-93"
+    }
+  }
+]
